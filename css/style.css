@@ -1,0 +1,228 @@
+@font-face {
+    font-family: 'Pokemon';
+    src: url('../font/Pokemon_Classic.ttf');
+    font-weight: 400;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: var(--fonte-classica);
+}
+
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+:root {
+    --borda-ver-escuro: #8d123371;
+    --fundo-ver-claro: #D91A4D;
+    --camera-azul: #26EAF4;
+    --luz-verde: #62B14C;
+    --luz-amarela: #DBCB7C;
+    --luz-vermelha: #C51937;
+    --borda-cinza: #E3E1E3;
+    --tela-verde: #C2E688;
+    --fonte-classica: "Pokemon", sans-serif;
+}
+
+body {
+    background-color: gray;
+    background: linear-gradient(to bottom, #6ab7f3, #fff);
+}
+
+.pokedex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+}
+
+.pokedex-corpo {
+    background-color: var(--fundo-ver-claro);
+    width: 320px;
+    height: 490px;
+    border-radius: 40px 20px 20px 40px;
+    border: 3px solid #000000;
+    box-shadow: inset 7px 0 var(--borda-ver-escuro);
+    position: relative;
+}
+
+.cima {
+    width: 100%;
+    height: 60px;
+    border-bottom: 2px solid #000000;
+    position: relative;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.cima ul {
+    display: flex;
+    position: relative;
+    list-style: none;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.camera {
+    content: "";
+    background-color: var(--camera-azul);
+    border: 3.5px solid #b6b6b6;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    box-shadow: inset 4px 0 rgba(255,255,255,0.7), inset -4px 0 rgba(0,0,0,0.2);
+    margin: 0px 10px 0px 0px ;
+}
+
+.vermelho  {
+    content: "";
+    background-color: var(--luz-vermelha);
+    border: 1px solid #000000;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    box-shadow: inset 1px 0 rgba(255,255,255,0.7), inset -4px 0 rgba(0,0,0,0.2) ;
+    margin: 7px 2px;
+}
+
+.amarela  {
+    content: "";
+    background-color: var(--luz-amarela);
+    border: 1px solid #000000;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    box-shadow: inset 1px 0 rgba(255,255,255,0.7), inset -4px 0 rgba(0,0,0,0.2) ;
+    margin: 7px 2px;
+}
+
+.verde  {
+    content: "";
+    background-color: var(--luz-verde);
+    border: 1px solid #000000;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    box-shadow: inset 1px 0 rgba(255,255,255,0.7), inset -4px 0 rgba(0,0,0,0.2) ;
+    margin: 7px 2px;
+} 
+
+.cima:before {left: 30px;}
+
+.points {
+    text-align: center;
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+}
+
+.points span {
+    font-size: 15px;
+    line-height: 0px;
+    letter-spacing: 3px;
+    margin-top: -5px;
+    display: block;
+}
+
+.fundo-tela {
+    width: 296px;
+    background-color: var(--borda-cinza);
+    margin: 30px 0 0 10px;
+    border: 3px solid #000000;
+    padding: 30px;
+    border-radius: 10px 10px 10px 50px;
+    position: relative;
+}
+
+.fundo-tela .tela {
+    width: 100%;
+    height: 130px;
+    background: var(--tela-verde);
+    border: 4px solid #000000;
+    box-shadow: inset 6px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    padding: 0px 0px 0px 8px;
+}
+
+.pokemon_imagem {
+    display: none;
+    height: 45%;
+    width: 45%;
+}
+
+.pokemon_data {
+    padding: 10px;
+    font-weight: 600;
+    color: #000000;
+    font-size: 1rem;
+}
+
+.pokemon_nome {
+    color: #000000;
+    text-transform: capitalize;
+    font-size: 0.5rem;
+}
+
+.pokemon_numero {
+    font-size: 0.5rem;
+}
+
+.pokemon_tipo {
+    font-size: 0.5rem;
+    text-transform: uppercase;
+}
+
+.form {
+    position: absolute;
+    width: 75%;
+    top: 68%;
+    left: 13.5%;
+}
+.pesquisa {
+    width: 100%;
+    padding: 4%;
+    outline: none;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    color: #000000;
+    font-size: 0.75rem;
+    box-shadow: -3px 4px 0 rgba(136, 136, 136, 0.418);
+}
+
+.botoes {
+    position: absolute;
+    bottom: 10%;
+    left: 55%;
+    width: 65%;
+    transform: translate(-57%, 0);
+    display: flex;
+    gap: 20px;
+}
+
+.button {
+    width: 50%;
+    padding: 4%;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background-color: #747272;
+    box-shadow: -2px 3px 0 #2c2c2c79, -4px 6px 0 #00000018;
+}
+
+.button:active {
+    box-shadow: inset -4px 4px 0 #2c2c2c79;
+    font-size: 0.8rem;
+}
